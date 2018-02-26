@@ -1,0 +1,42 @@
+// Variables de SASS
+
+// Paths
+$images-path: "../assets/img/";
+
+// Font families
+$main-font-family: "Karla", sans-serif;
+$title-font-family: "Karla", serif;
+
+// Font sizes
+$font-size-base: 18px;
+$font-size-small: $font-size-base - 5px;
+$font-size-large: $font-size-base + 5px;
+$font-size-h1: $font-size-base + 15px;
+$font-size-h2: $font-size-base + 12px;
+$font-size-h3: $font-size-base + 9px;
+$font-size-h4: $font-size-base + 6px;
+$font-size-h5: $font-size-base + 3px;
+$font-size-h6: $font-size-base;
+
+// Colors
+$color-FEIND: #594f4f;
+$color-Rock-my-world: #547980;
+$color-med-green-blue: #45ada8;
+$color-fetch-me-some: #9de0ad;
+$color-Pancakes: #e5fcc2;
+
+// Main components colors
+$main-text-color: $color-FEIND;
+$links-color: $color-Rock-my-world;
+$links-hover-color: $color-med-green-blue;
+$brand-color: $color-med-green-blue;
+$shadow-color: lighten(black, 30%);
+
+// Transitions
+$default-transition-time: 0.25s;
+
+// Responsive breakpoints
+$small-device-width: 376px;
+$medium-device-width: 576px;
+$large-device-width: 750px;
+$extra-large-device-width: 900px;
