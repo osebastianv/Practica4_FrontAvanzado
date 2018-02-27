@@ -3,6 +3,7 @@ body {
   font-family: $main-font-family;
   font-size: $font-size-base;
   color: $main-text-color;
+  background: url("#{$images-path}doodles.png");
 }
 
 // Estilos de los títulos
