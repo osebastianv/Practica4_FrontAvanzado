@@ -1,0 +1,115 @@
+{
+  "articles": [
+    {
+      "id": 1,
+      "title": "Título 1",
+      "intro":
+        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae, sed, dolorum aspernatur nam veritatis saepe veniam doloribus laudantium blanditiis repellat consequuntur odit! Vel sed maiores minima maxime impedit enim? Ullam!",
+      "image": "article-empty.png",
+      "author": "Autor del artículo",
+      "photo": ".png",
+      "date": "",
+      "tag": "tag"
+    },
+
+    {
+      "id": 2,
+      "title": "Título superlargo número 2",
+      "intro":
+        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae, sed, dolorum aspernatur nam veritatis saepe veniam doloribus laudantium blanditiis repellat consequuntur odit! Vel sed maiores minima maxime impedit enim? Ullam!",
+      "image": "article-empty.png",
+      "author": "Autor del artículo",
+      "photo": ".png",
+      "date": "",
+      "tag": "tag"
+    },
+    {
+      "id": 3,
+      "title": "Título 3",
+      "intro":
+        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae, sed, dolorum aspernatur nam veritatis saepe veniam doloribus laudantium blanditiis repellat consequuntur odit! Vel sed maiores minima maxime impedit enim? Ullam!",
+      "image": "article-empty.png",
+      "author": "Autor del artículo",
+      "photo": ".png",
+      "date": "",
+      "tag": "tag"
+    },
+    {
+      "id": 4,
+      "title": "Título 4",
+      "intro":
+        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae, sed, dolorum aspernatur nam veritatis saepe veniam doloribus laudantium blanditiis repellat consequuntur odit! Vel sed maiores minima maxime impedit enim? Ullam!",
+      "image": "article-empty.png",
+      "author": "Autor del artículo",
+      "photo": ".png",
+      "date": "",
+      "tag": "tag"
+    },
+    {
+      "id": 5,
+      "title": "Título 5",
+      "intro":
+        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae, sed, dolorum aspernatur nam veritatis saepe veniam doloribus laudantium blanditiis repellat consequuntur odit! Vel sed maiores minima maxime impedit enim? Ullam!",
+      "image": "article-empty.png",
+      "author": "Autor del artículo",
+      "photo": ".png",
+      "date": "",
+      "tag": "tag"
+    },
+    {
+      "id": 6,
+      "title": "Título 6",
+      "intro":
+        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae, sed, dolorum aspernatur nam veritatis saepe veniam doloribus laudantium blanditiis repellat consequuntur odit! Vel sed maiores minima maxime impedit enim? Ullam!",
+      "image": "article-empty.png",
+      "author": "Autor del artículo",
+      "photo": ".png",
+      "date": "",
+      "tag": "tag"
+    },
+    {
+      "id": 7,
+      "title": "Título 7",
+      "intro":
+        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae, sed, dolorum aspernatur nam veritatis saepe veniam doloribus laudantium blanditiis repellat consequuntur odit! Vel sed maiores minima maxime impedit enim? Ullam!",
+      "image": "article-empty.png",
+      "author": "Autor del artículo",
+      "photo": ".png",
+      "date": "",
+      "tag": "tag"
+    },
+    {
+      "id": 8,
+      "title": "Título 8",
+      "intro":
+        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae, sed, dolorum aspernatur nam veritatis saepe veniam doloribus laudantium blanditiis repellat consequuntur odit! Vel sed maiores minima maxime impedit enim? Ullam!",
+      "image": "article-empty.png",
+      "author": "Autor del artículo",
+      "photo": ".png",
+      "date": "",
+      "tag": "tag"
+    },
+    {
+      "id": 9,
+      "title": "Título 9",
+      "intro":
+        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae, sed, dolorum aspernatur nam veritatis saepe veniam doloribus laudantium blanditiis repellat consequuntur odit! Vel sed maiores minima maxime impedit enim? Ullam!",
+      "image": "article-empty.png",
+      "author": "Autor del artículo",
+      "photo": ".png",
+      "date": "",
+      "tag": "tag"
+    },
+    {
+      "id": 10,
+      "title": "Título 10",
+      "intro":
+        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae, sed, dolorum aspernatur nam veritatis saepe veniam doloribus laudantium blanditiis repellat consequuntur odit! Vel sed maiores minima maxime impedit enim? Ullam!",
+      "image": "article-empty.png",
+      "author": "Autor del artículo",
+      "photo": ".png",
+      "date": "",
+      "tag": "tag"
+    }
+  ]
+}
