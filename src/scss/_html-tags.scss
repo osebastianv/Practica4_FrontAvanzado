@@ -4,6 +4,7 @@ body {
   font-size: $font-size-base;
   color: $main-text-color;
   background: white; //url("#{$images-path}doodles.png");
+  padding-top: $header-height;
 }
 
 // Estilos de los títulos
