@@ -5,11 +5,13 @@
       "title": "Juego de tronos: o ganas o mueres",
       "intro":
         "Los Siete Reinos es una nación compuesta de siete regiones de Poniente que antiguamente fueron reinos independientes. Son gobernados por un rey que se sienta en el Trono de Hierro de la Fortaleza Roja, ubicado en Desembarco del Rey, la capital del reino.",
-      "image": "got.png",
+      "url": "https://www.youtube.com/embed/g1IICkElV0M",
+      "urlType": 2,
       "author": "Cersei Lannister",
-      "photo": "cersei.png",
+      "photo":
+        "http://contenidos.enter.co/custom/uploads/2016/04/game11-1024x768.jpg",
       "date": "",
-      "tag": "GoT"
+      "tag": ""
     },
 
     {
@@ -17,9 +19,12 @@
       "title": "Targaryen: Fuego y Sangre",
       "intro":
         "La Casa Targaryen es una casa noble de ascendencia Valyria que escapó de la Maldición. Sus asentamientos eran la capital del reino Desembarco del Rey, la isla de Rocadragón y el castillo de Refugio Estival. Su emblema es un dragón de tres cabezas de gules en campo sable, representando a Aegon I y sus hermanas Rhaenys y Visenya.",
-      "image": "targaryen.png",
+      "url":
+        "https://wallpaperstock.net/game-of-thrones%3a-house-targaryen-wallpapers_30168_1280x1024.jpg",
+      "urlType": 1,
       "author": "Daenerys Targaryen",
-      "photo": "daenerys.png",
+      "photo":
+        "https://i.pinimg.com/236x/40/90/62/409062886e2fc63bb653aa6b3e625ed3--daenerys-targaryen-game-of.jpg",
       "date": "",
       "tag": "Targaryen"
     },
@@ -28,9 +33,12 @@
       "title": "Stark: Se acerca el Invierno",
       "intro":
         "La Casa Stark de Invernalia es una casa noble del Norte. Su asentamiento es Invernalia. Durante siglos, fue la casa principal del Norte y su linaje se extiende hasta los Primeros Hombres, gobernando el Norte como reyes por derecho propio. Su emblema es un lobo huargo de cenizo corriendo sobre campo de plata. Su mandoble ancestral de acero valyrio se llamaba Hielo.",
-      "image": "stark.png",
+      "url":
+        "https://wallpaperstock.net/game-of-thrones%3a-house-stark-wallpapers_30166_1280x1024.jpg",
+      "urlType": 1,
       "author": "John Nieve",
-      "photo": "john.png",
+      "photo":
+        "https://pm1.narvii.com/6555/9de1173c97bef03fa39245db18519293bed6f879_128.jpg",
       "date": "",
       "tag": "Stark"
     },
@@ -39,9 +47,11 @@
       "title": "Lannister: ¡Oye mi Rugido!",
       "intro":
         "La Casa Lannister de Roca Casterly es la principal casa noble de las Tierras del Oeste. Su asentamiento es Roca Casterly. Su emblema es un león rampante de oro sobre campo de gules. Su lema no oficial, “Un Lannister siempre paga sus deudas”, es más conocido.",
-      "image": "lannister.png",
+      "url":
+        "https://wallpaperstock.net/game-of-thrones%3a-house-lannister-wallpapers_30163_1280x1024.jpg",
+      "urlType": 1,
       "author": "Tyrion Lannister",
-      "photo": "tyrion.png",
+      "photo": "http://personajes.info/wp-content/uploads/2017/02/8sUE9d4C.jpg",
       "date": "",
       "tag": "Lannister"
     },
@@ -50,9 +60,12 @@
       "title": "Martell: Nunca Doblegado, Nunca Roto",
       "intro":
         "La Casa Nymeros Martell de Lanza del Sol es la casa gobernante de Dorne. La palabra Nymeros significa de la línea de Nymeria, aunque generalmente es llamada sólo Casa Martell. Su asentamiento es el Palacio Antiguo de Lanza del Sol. Su emblema es un sol de gules atravesado por una lanza de oro sobre fondo naranja.",
-      "image": "martell.png",
+      "url":
+        "http://fotologimg.s3.amazonaws.com/photo/37/1/17/chokutou_reiki/13648234582912_f.jpg",
+      "urlType": 1,
       "author": "Oberyn Martell",
-      "photo": "oberyn.png",
+      "photo":
+        "https://pm1.narvii.com/6592/51b9c97ff71e9546834c8c5a7500ba9e49868b59_128.jpg",
       "date": "",
       "tag": "Martell"
     },
@@ -61,9 +74,11 @@
       "title": "Tyrell: Crecer Fuerte",
       "intro":
         "La Casa Tyrell de Altojardín es la casa gobernante del Dominio. Su asentamiento es Altojardín. Su emblema es una rosa en oro sobre campo de sinople.",
-      "image": "tyrell.png",
+      "url":
+        "https://imagesvc.timeincapp.com/v3/fan/image?url=https%3A%2F%2Fwinteriscoming.net%2Ffiles%2F2016%2F02%2Fhouse-Tyrell.jpg&c=sc&w=850&h=560",
+      "urlType": 1,
       "author": "Margaery Tyrell",
-      "photo": "margaery.png",
+      "photo": "https://78.media.tumblr.com/avatar_e3633d158dae_128.pnj",
       "date": "",
       "tag": "tyrell"
     },
@@ -72,9 +87,12 @@
       "title": "Baratheon: Nuestra es la Furia",
       "intro":
         "La Casa Baratheon de Bastión de Tormentas es una casa noble de las Tierras de la Tormenta. Su asentamiento es Bastión de Tormentas, que fue residencia de la Casa Durrandon, los antiguos Reyes de la Tormenta. Su emblema es un venado coronado de sable sobre campo de oro.",
-      "image": "baratheon.png",
+      "url":
+        "https://wallpaperstock.net/game-of-thrones%3a-house-baratheon-wallpapers_30160_1280x1024.jpg",
+      "urlType": 1,
       "author": "Stannis Baratheon",
-      "photo": "stannis.png",
+      "photo":
+        "https://yt3.ggpht.com/-irRe2pW_dFI/AAAAAAAAAAI/AAAAAAAAAAA/tX3W2dgNouE/s48-c-k-no-mo-rj-c0xffffff/photo.jpg",
       "date": "",
       "tag": "Baratheon"
     },
@@ -83,9 +101,12 @@
       "title": "Arryn: Tan Alto como el Honor",
       "intro":
         "La Casa Arryn del Nido de Águilas es la casa principal del Valle de Arryn y las Montañas de la Luna. Su asentamiento principal es el Nido de Águilas, pero tienen muchos otros asentamientos menores. Su linaje se extiende hasta la antigua nación de los Ándalos que invadió Poniente. Su emblema es una luna creciente y un halcón de plata en campo de cielo.",
-      "image": "arryn.png",
+      "url":
+        "https://wallpaperstock.net/game-of-thrones%3a-arryn-wallpapers_30158_1280x1024.jpg",
+      "urlType": 1,
       "author": "Lysa Arryn",
-      "photo": "lysa.png",
+      "photo":
+        "https://www.communitylandtrust.ca/wp-content/uploads/2015/10/placeholder.png",
       "date": "",
       "tag": "Arryn"
     },
@@ -94,9 +115,12 @@
       "title": "Greyjoy: Nosotros no sembramos",
       "intro":
         "La Casa Greyjoy de Pyke es una de las grandes casas de Poniente. Es la principal casa de las Islas del Hierro, un conjunto de islas desoladas en la costa oeste de Poniente. Su asentamiento es Pyke, un castillo situado en la isla del mismo nombre. Su emblema es un kraken de oro sobre campo de sable.",
-      "image": "greyjoy.png",
+      "url":
+        "https://wallpaperstock.net/game-of-thrones%3a-greyjoy-wallpapers_30161_1280x1024.jpg",
+      "urlType": 1,
       "author": "Euron Greyjoy",
-      "photo": "euron.png",
+      "photo":
+        "https://pm1.narvii.com/6617/a65a172b5e0d3913c0a3397b711cb6b1ac8ed3f1_128.jpg",
       "date": "",
       "tag": "Greyjoy"
     },
@@ -105,11 +129,22 @@
       "title": "Tully: Familia, Deber, Honor",
       "intro":
         "La Casa Tully de Aguasdulces fue la casa principal de las Tierras de los Ríos. Su linaje se extiende desde la Edad de los Héroes como Señores de Aguasdulces. Su emblema es una trucha de plata, saltando sobre campo ondulado de azur y gules. ",
-      "image": "tully.png",
+      "url":
+        "https://wallpaperstock.net/game-of-thrones%3a-tully-wallpapers_30169_1280x1024.jpg",
+      "urlType": 1,
       "author": "Edmure Tully",
-      "photo": "edmure.png",
+      "photo":
+        "https://www.communitylandtrust.ca/wp-content/uploads/2015/10/placeholder.png",
       "date": "",
       "tag": "Tully"
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "nombre": "Pepito Grillo",
+      "email": "pgrillo@noexiste.com",
+      "comentario": "Comentario número 1"
     }
   ]
 }

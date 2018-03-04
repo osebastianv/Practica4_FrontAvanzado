@@ -30,18 +30,19 @@
       margin: 10px auto;
 
       //width: calc(33% - 20px);
-      width: calc(80% - 20px);
+      //width: calc(90% - 20px);
+      width: calc(100% - 20px);
     }
 
     @include if-is-large-device {
       display: flex;
       //margin: 30px;
-      width: calc(90% - 20px);
+      //width: calc(90% - 20px);
     }
 
     @include if-is-extra-large-device {
       //width: calc(20% - 20px);
-      width: calc(95% - 20px);
+      //width: calc(100% - 20px);
     }
 
     &:hover {
@@ -52,8 +53,9 @@
       box-shadow: 0 0 1px $shadow-color;
     }
 
-    .image {
+    .url {
       flex: 1;
+      padding: 10px;
       //background: grey;
     }
 
@@ -63,10 +65,13 @@
       overflow: hidden;
 
       .title {
-        font-size: $font-size-h1;
+        //font-size: $font-size-h6;
+        @include if-is-medium-device {
+          font-size: $font-size-h1;
+        }
         font-weight: bold;
-        height: $font-size-h1 + 0.5rem;
-        @include text-overflow-ellipsis;
+        //height: $font-size-h1 + 0.5rem;
+        //@include text-overflow-ellipsis;
       }
 
       .intro {
@@ -82,12 +87,13 @@
         display: flex;
         flex-direction: row;
         align-items: center;
+
         //background: green;
-        border: 2px solid black;
+        //border: 2px solid black;
 
         img {
-          height: 3rem;
-          width: 3rem;
+          height: 48px;
+          width: 48px;
           //max-width: 100%;
           border-radius: 50%;
           overflow: hidden;
@@ -99,9 +105,38 @@
           //background: grey;
 
           //margin-top: 0.5rem;
-          font-size: $font-size-base;
+
+          font-size: $font-size-small;
+          @include if-is-medium-device {
+            font-size: $font-size-base;
+          }
           //background: green;
-          @include text-overflow-ellipsis;
+          //@include text-overflow-ellipsis;
+        }
+        .comments {
+          width: calc(50%-48px);
+          border-color: black;
+          border-radius: 5px;
+          overflow: hidden;
+
+          //margin-right: auto;
+          //background: brown;
+          //color: chartreuse;
+          /*.fa {
+            //margin-right: auto;
+            //position: absolute;
+            right: 20px;
+            //font-size: 25px;
+            transition: all $default-transition-time;
+
+            body.show-form & {
+              transform: rotate(3 * -45deg);
+            }
+          }*/
+        }
+        .commentsNumber {
+          //background: red;
+          margin: 0 5px;
         }
       }
     }
