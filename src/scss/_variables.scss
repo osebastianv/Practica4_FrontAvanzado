@@ -8,7 +8,7 @@ $main-font-family: "Karla", sans-serif;
 $title-font-family: "Karla", serif;
 
 // Font sizes
-$font-size-base: 18px;
+/*$font-size-base: 18px;
 $font-size-small: $font-size-base - 5px;
 $font-size-large: $font-size-base + 5px;
 $font-size-h1: $font-size-base + 15px;
@@ -16,6 +16,15 @@ $font-size-h2: $font-size-base + 12px;
 $font-size-h3: $font-size-base + 9px;
 $font-size-h4: $font-size-base + 6px;
 $font-size-h5: $font-size-base + 3px;
+$font-size-h6: $font-size-base;*/
+$font-size-base: 1rem;
+$font-size-small: $font-size-base - 0.2rem;
+$font-size-large: $font-size-base + 0.2rem;
+$font-size-h1: $font-size-base + 0.8rem;
+$font-size-h2: $font-size-base + 0.66rem;
+$font-size-h3: $font-size-base + 0.5rem;
+$font-size-h4: $font-size-base + 0.35rem;
+$font-size-h5: $font-size-base + 0.15rem;
 $font-size-h6: $font-size-base;
 
 // Colors

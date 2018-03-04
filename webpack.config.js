@@ -1,6 +1,7 @@
 const path = require("path");
 const webpack = require("webpack");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
+var CopyWebpackPlugin = require("copy-webpack-plugin");
 
 module.exports = {
   // entry point: archivo que lee webpack para construir el grafo de dependencias
@@ -47,7 +48,8 @@ module.exports = {
       minify: {
         collapseWhitespace: true
       }
-    })
+    }),
+    new CopyWebpackPlugin([{ from: "src/assets/img", to: "src/assets/img" }])
   ],
 
   // dev server configuration
@@ -58,5 +60,9 @@ module.exports = {
     hot: true,
     contentBase: path.join(__dirname, "src"),
     watchContentBase: true
+  },
+
+  node: {
+    fs: "empty" //Para poder utilizar el paquete fs
   }
 };
