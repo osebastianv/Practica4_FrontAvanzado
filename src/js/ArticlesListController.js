@@ -101,11 +101,12 @@ export class ArticlesListController {
     this.element.innerHTML = html;
   }
 
-  loadArticles() {
+  loadArticles(filter) {
+    //console.log("algo1", filter);
     this.showLoadingMessage();
     let articlesService = new ArticlesService();
     articlesService
-      .list()
+      .list(filter)
       .then(articles => {
         //console.log(articles);
         if (articles.length == 0) {

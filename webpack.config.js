@@ -30,10 +30,6 @@ module.exports = {
           "file-loader?name=[name].[ext]&useRelativePath=true",
           "image-webpack-loader"
         ]
-      },
-      {
-        test: /assets.[^img]/,
-        use: "file-loader?name=[name].[ext]&useRelativePath=true"
       }
     ]
   },
@@ -56,7 +52,7 @@ module.exports = {
     port: 3000, // puerto del servidor web
     overlay: true, // muestra los errores en pantalla
     hot: true,
-    contentBase: path.join(__dirname, "src"),
+    contentBase: [path.join(__dirname, 'src'), path.join(__dirname, 'src/includes')],
     watchContentBase: true
   }
 };

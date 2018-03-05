@@ -32,6 +32,7 @@
   "dependencies": {
     "font-awesome": "^4.7.0",
     "moment": "^2.20.1",
+    "pubsub-js": "^1.6.0",
     "reset-css": "^2.2.1"
   }
 }
