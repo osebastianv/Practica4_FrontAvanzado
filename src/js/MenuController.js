@@ -1,27 +1,44 @@
 import { ArticlesService } from "./ArticlesService";
 
 export class MenuController {
-  constructor(selector, articlesListController, pubSub) {
+  constructor(selector, pubSub) {
     this.element = document.querySelector(selector);
-    this.articlesListController = articlesListController;
     this.pubSub = pubSub;
-    /*this.element
-      .querySelector(".menu_item")
-      .addEventListener("click", event => {
-        //var origEl = event.target || event.srcElement;
-        //console.log(origEl.href);
-        //console.log(event);
-        //alert("algo");
-        //appController.toggleForm();
-      });*/
+    //this.addEventListeners();
   }
+
+  /*addEventListeners() {
+    this.addMenuSelectedListener();
+  }
+
+  changeMediaQuery(mql) {
+    //alert(mql.matches);
+    console.log(mql.matches);
+
+    const body = document.querySelector("body");
+    if (mql.matches == true) {
+      if (body.classList.contains("show-menu") == true) {
+        body.classList.toggle("show-menu");
+      }
+    } else {
+      if (body.classList.contains("show-menu") == false) {
+        body.classList.toggle("show-menu");
+      }
+    }
+    console.log("Contiene: ", body.classList.contains("show-menu"));
+  }
+
+  addMenuSelectedListener() {
+    var mql = window.matchMedia("screen and (max-width: 750px)");
+    this.changeMediaQuery(mql);
+    mql.addListener(this.changeMediaQuery);
+  }*/
 
   deleteActiveClass() {
     var menuItems = document.getElementsByClassName("menu_item");
     for (var i = 0; i < menuItems.length; i++) {
       menuItems[i].classList.remove("menu_item--active");
-      console.log(menuItems[i]);
-      //menuItems[i].classList.add("menu_item");
+      //console.log(menuItems[i]);
     }
   }
 
@@ -35,9 +52,10 @@ export class MenuController {
         this.deleteActiveClass();
         //console.log(event.srcElement.innerText);
         event.srcElement.classList.add("menu_item--active");
-        this.articlesListController.loadArticles(event.srcElement.innerText);
+        this.pubSub.publish("menu:selected", event.srcElement.innerText);
+        /*this.articlesListController.loadArticles(event.srcElement.innerText);
         //appController.toggleForm();
-        this.pubSub.publish("article:selected");
+        this.pubSub.publish("menu:closed");*/
       });
     }
   }
@@ -66,7 +84,8 @@ export class MenuController {
 
     this.element.innerHTML = html;
 
-    this.articlesListController.loadArticles("Inicio");
+    //this.articlesListController.loadArticles("Inicio");
+    this.pubSub.publish("menu:selected", "");
 
     this.loadEvents();
   }

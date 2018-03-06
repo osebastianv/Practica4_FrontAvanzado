@@ -45,13 +45,13 @@
       //width: calc(100% - 20px);
     }
 
-    &:hover {
+    /*&:hover {
       cursor: pointer;
       box-shadow: 0 0 5px $shadow-color;
     }
     &:active {
       box-shadow: 0 0 1px $shadow-color;
-    }
+    }*/
 
     .url {
       flex: 1;
@@ -72,6 +72,14 @@
         font-weight: bold;
         //height: $font-size-h1 + 0.5rem;
         //@include text-overflow-ellipsis;
+
+        &:hover {
+          cursor: pointer;
+          text-decoration: underline;
+        }
+        &:active {
+          color: blue;
+        }
       }
 
       .intro {

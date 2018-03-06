@@ -43,6 +43,13 @@ module.exports = {
       minify: {
         collapseWhitespace: true
       }
+    }),
+    new HtmlWebpackPlugin({
+      filename: "detail.html",
+      template: path.join(__dirname, "src", "detail.html"),
+      minify: {
+        collapseWhitespace: true
+      }
     })
   ],
 
@@ -52,7 +59,10 @@ module.exports = {
     port: 3000, // puerto del servidor web
     overlay: true, // muestra los errores en pantalla
     hot: true,
-    contentBase: [path.join(__dirname, 'src'), path.join(__dirname, 'src/includes')],
+    contentBase: [
+      path.join(__dirname, "src"),
+      path.join(__dirname, "src/includes")
+    ],
     watchContentBase: true
   }
 };

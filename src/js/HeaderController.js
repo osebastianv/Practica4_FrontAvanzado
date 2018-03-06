@@ -1,8 +1,11 @@
 export class HeaderController {
-  constructor(selector, appController) {
+  constructor(selector, pubSub) {
     this.element = document.querySelector(selector);
+    this.pubSub = pubSub;
+
     this.element.querySelector(".fa").addEventListener("click", event => {
-      appController.toggleForm();
+      this.pubSub.publish("menu:closed");
+      //appController.toggleMenu();
     });
   }
 }

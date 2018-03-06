@@ -7,15 +7,14 @@ import { PubSub } from "pubsub-js";
 
 document.addEventListener("DOMContentLoaded", () => {
   let appController = new AppController("body", PubSub);
-  let headerController = new HeaderController(".web-header", appController);
+  let headerController = new HeaderController(".web-header", PubSub);
 
-  let articlesListController = new ArticlesListController(".articles-list");
-  //articlesListController.loadArticles();
-
-  let menuController = new MenuController(
-    ".articles-menu",
-    articlesListController,
+  let articlesListController = new ArticlesListController(
+    ".articles-list",
     PubSub
   );
+  //articlesListController.loadArticles();
+
+  let menuController = new MenuController(".articles-menu", PubSub);
   menuController.loadMenu();
 });

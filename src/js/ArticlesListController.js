@@ -3,8 +3,63 @@ import { ArticlesService } from "./ArticlesService";
 //const fs = require("fs");
 
 export class ArticlesListController {
-  constructor(selector) {
+  constructor(selector, pubSub) {
     this.element = document.querySelector(selector);
+    this.pubSub = pubSub;
+    this.addEventListeners();
+  }
+
+  addEventListeners() {
+    this.addSelectedMenuListener();
+    this.addSelectedTitleListener();
+  }
+
+  addSelectedMenuListener() {
+    this.pubSub.subscribe("menu:selected", (event, filter) => {
+      this.loadArticles(filter);
+      console.log(filter);
+      //if (filter !== undefined) {
+      if (typeof filter !== "undefined" && filter !== "") {
+        //console.log("SI");
+        this.pubSub.publish("menu:closed");
+      }
+    });
+  }
+
+  /*addSelectedTitleListener() {
+    document.getElementsByClassName("title").forEach(li => {
+      li.addEventListener("click", event => {
+        alert("ok");
+      });
+    });
+  }*/
+
+  addSelectedTitleListener() {
+    try {
+      console.log("Titles1");
+      const items = document.getElementsByClassName("title");
+      console.log("Titles:", items);
+      console.log("vale", items.length);
+
+      for (var item of items) {
+        console.log("algo:", item);
+      }
+
+      /*items.forEach(div => {
+        console.log("algo:", div);
+      });*/
+
+      //AQUI AQUI
+
+      for (let i = 0; i < items.length; i++) {
+        console.log("algo:", items[i]);
+        items[i].addEventListener("click", event => {
+          alert("ok", event);
+        });
+      }
+    } catch (err) {
+      console.log("Error", err);
+    }
   }
 
   showLoadingMessage() {
@@ -20,62 +75,20 @@ export class ArticlesListController {
     this.element.innerHTML = '<div class="info">No hay ningún artículo</div>';
   }
 
-  /*fileExists(path) {
-    try {
-      return fs.statSync(path).isFile();
-    } catch (e) {
-      return false;
-    }
-  }*/
-
   renderArticles(articles) {
     let html = "";
 
     for (let article of articles) {
-      /*const image = path.join(
-        __dirname,
-        "src/assets/img/houses",
-        article.url
-      );
-
-      let isVideo = false;
-      const regex = /\.(mov|mpeg4|mp4|avi|wmv|mpegps|flv|3gpp|webm|dnxhr|prores|cineform|hevc)$/; //Extensiones youtube
-      if (regex.test(image)) {
-        isVideo = true;
-        console.log("VIDEO: " + image);
-      } else {
-        console.log("IMG: " + image);
-      }*/
-
-      //console.log(fileExists(image));
-
-      /*if (fs.fstatSync(image)) {
-        // Do something
-        console.log("SI", image);
-      }*/
-
-      /*const photo = path.join(
-        __dirname,
-        "src/assets/img/photos",
-        article.photo
-      );*/
-      //console.log(photo);
-
       html += `<article class="article">
                 <div class="url">`;
 
-      console.log(article.urlType);
+      //console.log(article.urlType);
 
       if (article.urlType == 1) {
         //1. Imagen
         html += `<img src="${article.url}" alt="${article.title}">`;
       } else {
         //2. Video
-        /*html += `<video controls>
-                    <source src="${article.url}" type="video/mp4">
-                  </video>`;*/
-
-        //html += ` <iframe src="https://www.youtube.com/embed/g1IICkElV0M" allow="autoplay; encrypted-media"></iframe>`;
         html += ` <iframe src="${
           article.url
         }" allow="autoplay; encrypted-media"></iframe>`;

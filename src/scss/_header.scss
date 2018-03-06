@@ -1,11 +1,12 @@
 @import "mixins/transparent-background";
+@import "mixins/responsive-utils";
 
 .web-header {
   position: fixed;
   width: 100%;
   height: $header-height;
   box-sizing: border-box;
-  z-index: 99999;
+  z-index: 999;
   top: 0;
   text-align: left;
   //padding: 20px 0;
@@ -45,11 +46,15 @@
     body.show-menu & {
       transform: rotate(2 * -45deg);
     }
+
+    @include if-is-large-device {
+      visibility: hidden;
+    }
   }
 
-  .navbar {
+  /*.navbar {
     display: none;
-  }
+  }*/
 
   /*.navbar {
     flex: 2;
