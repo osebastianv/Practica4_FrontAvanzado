@@ -1,0 +1,81 @@
+@import "mixins/text-overflow-ellipsis";
+@import "mixins/responsive-utils";
+
+.fa-bars {
+  visibility: hidden;
+}
+
+.detail {
+  margin: 0 auto; // centra un div horizontalmente
+  max-width: $extra-large-device-width;
+  padding: 0 10px;
+  //background: green;
+
+  .the-article {
+    h1 {
+      padding: 30px 30px;
+      text-align: center;
+      font-weight: bold;
+      font-size: font-size-h1;
+    }
+
+    h2 {
+      padding: 15px 0;
+      font-size: font-size-h4;
+    }
+
+    img {
+      width: 100%;
+    }
+
+    cite {
+      text-align: justify;
+      font-style: italic;
+      font-size: $font-size-small;
+    }
+
+    p {
+      text-align: justify;
+      //background: chocolate;
+    }
+
+    .author-detail {
+      margin-top: 10px;
+      width: 100%;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+
+      img {
+        height: 48px;
+        width: 48px;
+        //max-width: 100%;
+        border-radius: 50%;
+        overflow: hidden;
+      }
+
+      .name-detail {
+        padding: 10px;
+        width: 50%;
+
+        font-size: $font-size-small;
+        @include if-is-medium-device {
+          font-size: $font-size-base;
+        }
+      }
+      .comments-comments-info {
+        width: calc(50%-48px);
+        border-color: black;
+        border-radius: 5px;
+        overflow: hidden;
+      }
+      .commentsNumber {
+        margin: 0 5px;
+      }
+    }
+  }
+
+  .comments {
+    padding: 10px 0;
+  }
+}

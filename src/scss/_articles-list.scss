@@ -83,7 +83,7 @@
       }
 
       .intro {
-        margin-top: 0.5rem;
+        margin-top: 10px;
         text-align: justify;
         //background: blue;
         //@include text-overflow-ellipsis;
@@ -96,9 +96,6 @@
         flex-direction: row;
         align-items: center;
 
-        //background: green;
-        //border: 2px solid black;
-
         img {
           height: 48px;
           width: 48px;
@@ -110,40 +107,19 @@
         .name {
           padding: 0.5rem;
           width: 50%;
-          //background: grey;
-
-          //margin-top: 0.5rem;
-
           font-size: $font-size-small;
+
           @include if-is-medium-device {
             font-size: $font-size-base;
           }
-          //background: green;
-          //@include text-overflow-ellipsis;
         }
-        .comments {
+        .comments-comments-info {
           width: calc(50%-48px);
           border-color: black;
           border-radius: 5px;
           overflow: hidden;
-
-          //margin-right: auto;
-          //background: brown;
-          //color: chartreuse;
-          /*.fa {
-            //margin-right: auto;
-            //position: absolute;
-            right: 20px;
-            //font-size: 25px;
-            transition: all $default-transition-time;
-
-            body.show-form & {
-              transform: rotate(3 * -45deg);
-            }
-          }*/
         }
         .commentsNumber {
-          //background: red;
           margin: 0 5px;
         }
       }

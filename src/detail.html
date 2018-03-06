@@ -1,3 +1,57 @@
 <%= require('html-loader!./includes/header.html') %>
-    <p>Detalle</p>>
+    <section class="detail">
+        <section class="the-article">
+            <h1>Lorem Ipsum</h1>
+
+            <figure class="image-article">
+                <img src="https://www.jqueryscript.net/images/Universal-Placeholder-Text-Lorem-Ipsum-Generator-getlorem.jpg" alt="imágen de artículo">
+                <figcaption class="image_description">
+                    <cite>Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit...</cite>
+                    </br>
+                    <cite>No hay nadie que ame el dolor mismo, que lo busque, lo encuentre y lo quiera, simplemente porque es el
+                        dolor.
+                    </cite>
+                </figcaption>
+            </figure>
+
+            <div class="author-detail">
+                <img src="https://www.communitylandtrust.ca/wp-content/uploads/2015/10/placeholder.png" alt="$Foto del autor">
+                <div class="name-detail">Alvaro González</div>
+                <div class="comments-detail">
+                    <i class="fa fa-comments"></i>
+                </div>
+                <p class="commentsNumber">100</p>
+            </div>
+
+
+            <h2>¿Qué es Lorem Ipsum?</h2>
+
+            <p>Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto. Lorem Ipsum ha sido el texto
+                de relleno estándar de las industrias desde el año 1500, cuando un impresor desconocido usó una galería de
+                textos y los mezcló de tal manera que logró hacer un libro de textos espécimen. No sólo sobrevivió 500 años,
+                sino que también ingresó como texto de relleno en documentos electrónicos, quedando esencialmente igual al
+                original. Fue popularizado en los 60's con la creación de las hojas "Letraset", las cuales contenían pasajes
+                de Lorem Ipsum, y más recientemente con software de autoedición, como por ejemplo Aldus PageMaker, el cual
+                incluye versiones de Lorem Ipsum.
+            </p>
+
+            <h2>¿De dónde viene?</h2>
+
+            <p>Al contrario del pensamiento popular, el texto de Lorem Ipsum no es simplemente texto aleatorio. Tiene sus raíces
+                en una pieza clásica de la literatura del latín, que data del año 45 antes de Cristo, haciendo que este adquiera
+                más de 2000 años de antigüedad. Richard McClintock, un profesor de Latín de la Universidad de Hampden-Sydney
+                en Virginia, encontró una de las palabras más oscuras de la lengua del latín, "consecteur", en un pasaje
+                de Lorem Ipsum, y al seguir leyendo distintos textos del latín, descubrió la fuente indudable. Lorem Ipsum
+                viene de las secciones 1.10.32 y 1.10.33 de "de Finnibus Bonorum et Malorum" (Los Extremos del Bien y El
+                Mal) por Cícero, escrito en el año 45 antes de Cristo. Este libro es un tratado de teoría de éticas, muy
+                popular durante el Renacimiento.
+            </p>
+        </section>
+
+        <section class="comments">
+            <h2 class="comments-title">Comentarios</h2>
+            <section class="comments-list"></section>
+        </section>
+    </section>
+
     <%= require('html-loader!./includes/footer.html') %>

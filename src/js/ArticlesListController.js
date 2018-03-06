@@ -1,6 +1,7 @@
 export class ArticlesListController {
   constructor(selector, articlesService, pubSub) {
     this.element = document.querySelector(selector);
+    console.log("J: ", this.element);
     this.articlesService = articlesService;
     this.pubSub = pubSub;
     this.addEventListeners();
@@ -95,7 +96,7 @@ export class ArticlesListController {
                     <div class="author">
                         <img src="${article.photo}" alt="${article.author}">
                         <div class="name">${article.author}</div>
-                        <div class="comments">
+                        <div class="comments-info">
                           <i class="fa fa-comments"></i>
                         </div>
                         <p class="commentsNumber">100</p>
