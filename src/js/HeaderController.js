@@ -4,7 +4,7 @@ export class HeaderController {
     this.pubSub = pubSub;
 
     this.element.querySelector(".fa").addEventListener("click", event => {
-      this.pubSub.publish("menu:closed");
+      this.pubSub.publish("openclose");
       //appController.toggleMenu();
     });
   }

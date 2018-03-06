@@ -1,27 +1,24 @@
-import { ArticlesService } from "./ArticlesService";
-//const path = require("path");
-//const fs = require("fs");
-
 export class ArticlesListController {
-  constructor(selector, pubSub) {
+  constructor(selector, articlesService, pubSub) {
     this.element = document.querySelector(selector);
+    this.articlesService = articlesService;
     this.pubSub = pubSub;
     this.addEventListeners();
   }
 
   addEventListeners() {
-    this.addSelectedMenuListener();
-    this.addSelectedTitleListener();
+    this.addSelectedItemMenuListener();
+    //this.addSelectedTitleListener();
   }
 
-  addSelectedMenuListener() {
+  addSelectedItemMenuListener() {
     this.pubSub.subscribe("menu:selected", (event, filter) => {
       this.loadArticles(filter);
       console.log(filter);
       //if (filter !== undefined) {
       if (typeof filter !== "undefined" && filter !== "") {
         //console.log("SI");
-        this.pubSub.publish("menu:closed");
+        this.pubSub.publish("openclose");
       }
     });
   }
@@ -35,31 +32,27 @@ export class ArticlesListController {
   }*/
 
   addSelectedTitleListener() {
-    try {
-      console.log("Titles1");
-      const items = document.getElementsByClassName("title");
-      console.log("Titles:", items);
-      console.log("vale", items.length);
+    //document.addEventListener("DOMContentLoaded", () => {
+    //try {
+    console.log("Titles1");
+    const items = document.getElementsByClassName("title");
 
-      for (var item of items) {
-        console.log("algo:", item);
-      }
+    console.log("Titles:", items);
+    console.log("vale", items.length);
 
-      /*items.forEach(div => {
-        console.log("algo:", div);
-      });*/
-
-      //AQUI AQUI
-
-      for (let i = 0; i < items.length; i++) {
-        console.log("algo:", items[i]);
-        items[i].addEventListener("click", event => {
-          alert("ok", event);
-        });
-      }
-    } catch (err) {
-      console.log("Error", err);
+    for (let i = 0; i < items.length; i++) {
+      //console.log("algo:", items[i]);
+      items[i].addEventListener("click", event => {
+        //alert("ok", event);
+        //console.log("ok", event.target.innerText);
+        window.open("detail.html", "_self");
+        //console.log(window.name);
+      });
     }
+    //} catch (err) {
+    //  console.log("Error", err);
+    //}
+    //});
   }
 
   showLoadingMessage() {
@@ -112,13 +105,14 @@ export class ArticlesListController {
             </article>`;
     }
     this.element.innerHTML = html;
+
+    this.addSelectedTitleListener();
   }
 
   loadArticles(filter) {
     //console.log("algo1", filter);
     this.showLoadingMessage();
-    let articlesService = new ArticlesService();
-    articlesService
+    this.articlesService
       .list(filter)
       .then(articles => {
         //console.log(articles);

@@ -1,38 +1,11 @@
-import { ArticlesService } from "./ArticlesService";
+//import { ArticlesService } from "./ArticlesService";
 
 export class MenuController {
-  constructor(selector, pubSub) {
+  constructor(selector, articlesService, pubSub) {
     this.element = document.querySelector(selector);
+    this.articlesService = articlesService;
     this.pubSub = pubSub;
-    //this.addEventListeners();
   }
-
-  /*addEventListeners() {
-    this.addMenuSelectedListener();
-  }
-
-  changeMediaQuery(mql) {
-    //alert(mql.matches);
-    console.log(mql.matches);
-
-    const body = document.querySelector("body");
-    if (mql.matches == true) {
-      if (body.classList.contains("show-menu") == true) {
-        body.classList.toggle("show-menu");
-      }
-    } else {
-      if (body.classList.contains("show-menu") == false) {
-        body.classList.toggle("show-menu");
-      }
-    }
-    console.log("Contiene: ", body.classList.contains("show-menu"));
-  }
-
-  addMenuSelectedListener() {
-    var mql = window.matchMedia("screen and (max-width: 750px)");
-    this.changeMediaQuery(mql);
-    mql.addListener(this.changeMediaQuery);
-  }*/
 
   deleteActiveClass() {
     var menuItems = document.getElementsByClassName("menu_item");
@@ -55,7 +28,7 @@ export class MenuController {
         this.pubSub.publish("menu:selected", event.srcElement.innerText);
         /*this.articlesListController.loadArticles(event.srcElement.innerText);
         //appController.toggleForm();
-        this.pubSub.publish("menu:closed");*/
+        this.pubSub.publish("menu:openclose");*/
       });
     }
   }
@@ -87,12 +60,12 @@ export class MenuController {
     //this.articlesListController.loadArticles("Inicio");
     this.pubSub.publish("menu:selected", "");
 
+    //Necesario paquí para esperar a que se genere la lista
     this.loadEvents();
   }
 
   loadMenu() {
-    let articlesService = new ArticlesService();
-    articlesService
+    this.articlesService
       .list()
       .then(articles => {
         //console.log(articles);

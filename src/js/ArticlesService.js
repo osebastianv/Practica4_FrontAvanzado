@@ -1,13 +1,17 @@
 export class ArticlesService {
+  constructor(url) {
+    this.url = url;
+    console.log("1-", this.url);
+  }
+
   async list(filter) {
-    let url = "http://localhost:3001/articles";
+    let url = this.url;
     if (typeof filter !== "undefined") {
       if (filter !== "Inicio" && filter !== "") {
         url += "?tag=" + filter;
       }
     }
 
-    //console.log("algo", filter, url);
     const response = await fetch(url);
     return response.json();
   }
