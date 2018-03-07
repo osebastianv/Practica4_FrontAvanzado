@@ -1,12 +1,28 @@
 const path = require("path");
 const webpack = require("webpack");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
+const ExtractTextPlugin = require("extract-text-webpack-plugin");
+
+const isProduction = process.env.ENTORNO == "produccion";
+let scssLoaders = [];
+if (isProduction) {
+  scssLoaders = ExtractTextPlugin.extract({
+    fallback: "style-loader",
+    use: ["css-loader?url=false&sourceMap=true", "sass-loader?sourceMap=true"]
+  });
+} else {
+  scssLoaders = [
+    "style-loader",
+    "css-loader?url=false&sourceMap=true",
+    "sass-loader?sourceMap=true"
+  ];
+}
 
 module.exports = {
   // entry point: archivo que lee webpack para construir el grafo de dependencias
   entry: {
-    index: path.join(__dirname, "src", "entry.js"),
-    detail: path.join(__dirname, "src", "entryDetail.js")
+    index: ["babel-polyfill", path.join(__dirname, "src", "entry.js")],
+    detail: ["babel-polyfill", path.join(__dirname, "src", "entryDetail.js")]
   },
 
   // output: carpeta en la que quiero que webpack me deje el código generado
@@ -20,7 +36,7 @@ module.exports = {
     rules: [
       {
         test: /\.scss$/,
-        use: ["style-loader", "css-loader?url=false", "sass-loader"]
+        use: scssLoaders
       },
       {
         test: /\.js$/,

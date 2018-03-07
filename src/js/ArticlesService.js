@@ -1,7 +1,7 @@
 export class ArticlesService {
   constructor(url) {
     this.url = url;
-    console.log("1-", this.url);
+    //console.log("1-", this.url);
   }
 
   async list(filter) {
