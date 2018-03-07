@@ -36,7 +36,21 @@
     background: brown;
   }
 
-  .fa {
+  /*.search {
+    z-index: 99999999;
+    background: blue;
+    width: 900px;
+
+    .input-search {
+      position: absolute;
+
+      right: 110px;
+      width: 100px;
+      background: green;
+    }
+  }*/
+
+  .fa-bars {
     position: absolute;
     right: 10px;
     top: 17px;

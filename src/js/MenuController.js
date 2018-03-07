@@ -52,6 +52,14 @@ export class MenuController {
       }
     }
 
+    html += `<form novalidate class="search">
+    <div>
+        <input type="text" class="input-search" name="search" placeholder="Buscar...">
+    </div>
+    </form>`;
+
+    //<i class="fa fa-search"></i>
+
     html += `</ul>`;
 
     this.element.innerHTML = html;

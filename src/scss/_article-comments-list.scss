@@ -4,12 +4,15 @@
 .comments-list {
   //background: green;
   height: 200px;
+  background: lightblue;
+  border: 1px solid black;
+  border-radius: 5px;
   overflow: auto; //scroll auto
 
   .comment {
     //display: flex;
     background: white;
-    margin: 10px 1px;
+    margin: 10px 10px;
     padding: 5px;
     //align-items: center;
     //margin: 10px;

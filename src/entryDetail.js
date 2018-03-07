@@ -5,6 +5,7 @@ import { HeaderController } from "./js/HeaderController";
 import { MenuController } from "./js/MenuController";
 import { ArticlesListController } from "./js/ArticlesListController";
 import { CommentsListController } from "./js/CommentsListController";
+import { CommentsFormController } from "./js/CommentsFormController";
 import { PubSub } from "pubsub-js";
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -34,4 +35,11 @@ document.addEventListener("DOMContentLoaded", () => {
     PubSub
   );
   commentsListController.loadComments();
+
+  let commentsFormController = new CommentsFormController(
+    ".comments-form",
+    appService2,
+    PubSub
+  );
+
 });

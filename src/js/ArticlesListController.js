@@ -87,7 +87,6 @@ export class ArticlesListController {
                         </div>
                         <p class="commentsNumber">100</p>
                     </div>
-
                 </div>
             </article>`;
     }

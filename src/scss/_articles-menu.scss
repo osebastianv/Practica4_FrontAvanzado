@@ -33,6 +33,18 @@
         text-decoration: underline;
       }
     }
+
+    .input-search {
+      width: 100px;
+      border: 0.5px solid black;
+      padding: 10px 10px;
+    }
+
+    .fa-search {
+      //visibility: collapse;
+      border: 0.5px solid black;
+      background: green;
+    }
   }
 
   .menu_item--active {
@@ -59,6 +71,14 @@
         border: 0;
         font-size: $font-size-small;
       }
+      .input-search {
+        padding: 3px 3px;
+        margin: 18px 5px;
+        font-size: $font-size-small;
+      }
+
+      .fa-search {
+      }
     }
     //background: white;
   }
@@ -71,6 +91,11 @@
     .menu_list {
       .menu_item {
         font-size: $font-size-base;
+      }
+      .input-search {
+        margin: 20px 10px;
+        //padding: 1px 3px;
+        //font-size: $font-size-base;
       }
     }
   }

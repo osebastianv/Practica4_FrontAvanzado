@@ -51,6 +51,26 @@
         <section class="comments">
             <h2 class="comments-title">Comentarios</h2>
             <section class="comments-list"></section>
+
+            <h2 class="comments-title">Nuevo comentario</h2>
+            <form novalidate class="comments-form animated slideInDown">
+                <div class="form-row">
+                    <input type="text" name="name" id="contact-name" placeholder="Nombre completo" required>
+                </div>
+
+                <div class="form-row">
+                    <input type="email" id="contact-email" name="email" placeholder="nombre@compañía.es" required>
+                </div>
+
+                <div class="form-row">
+                    <textarea id="comments-text" placeholder="Escriba aquí su comentario (máximo 120 palabras)" value=""></textarea>
+                    <span id="comments-counter">0 palabras (máx 120)</span>
+                </div>
+
+                <div class="form-row">
+                    <button type="submit" id="send-button">Enviar Comentario</button>
+                </div>
+            </form>
         </section>
     </section>
 

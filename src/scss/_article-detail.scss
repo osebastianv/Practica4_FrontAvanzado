@@ -26,6 +26,7 @@
 
     img {
       width: 100%;
+      border: 1px solid black;
     }
 
     cite {
@@ -63,19 +64,20 @@
           font-size: $font-size-base;
         }
       }
-      .comments-comments-info {
+      /*.comments-comments-info {
         width: calc(50%-48px);
         border-color: black;
         border-radius: 5px;
         overflow: hidden;
-      }
+        background: green;
+      }*/
       .commentsNumber {
         margin: 0 5px;
       }
     }
   }
   .comments-title {
-    margin: 10px 0px;
+    margin: 20px 0px 10px 0;
     //background: red;
   }
 }
