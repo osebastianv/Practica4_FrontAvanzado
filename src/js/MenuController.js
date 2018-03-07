@@ -1,10 +1,11 @@
 //import { AppService } from "./appService";
 
 export class MenuController {
-  constructor(selector, appService, pubSub) {
+  constructor(selector, appService, pubSub, type) {
     this.element = document.querySelector(selector);
     this.appService = appService;
     this.pubSub = pubSub;
+    this.type = type; //1. index; 2. detail
   }
 
   deleteActiveClass() {
@@ -25,7 +26,12 @@ export class MenuController {
         this.deleteActiveClass();
         //console.log(event.srcElement.innerText);
         event.srcElement.classList.add("menu_item--active");
-        this.pubSub.publish("menu:selected", event.srcElement.innerText);
+        if (this.type == 1) {
+          this.pubSub.publish("menu:selected", event.srcElement.innerText);
+        } else {
+          //alert(event.srcElement.innerText);
+          window.open("index.html", "_self");
+        }
       });
     }
   }
@@ -50,18 +56,40 @@ export class MenuController {
 
     this.element.innerHTML = html;
 
-    //this.articlesListController.loadArticles("Inicio");
-    this.pubSub.publish("menu:selected", "");
+    console.log("A", this.type);
+    if (this.type == 1) {
+      this.pubSub.publish("menu:selected", "");
+    }
 
-    //Necesario paquí para esperar a que se genere la lista
+    //Necesario aquí para esperar a que se genere la lista
     this.loadEvents();
+  }
+
+  filterTags(articles) {
+    let filterArticles = [];
+    for (let element of articles) {
+      if (
+        filterArticles
+          .map(el => {
+            return el.tag;
+          })
+          .indexOf(element.tag) === -1
+      ) {
+        filterArticles.push(element);
+      }
+    }
+
+    return filterArticles;
   }
 
   loadMenu() {
     this.appService
       .list("")
       .then(articles => {
-        //console.log(articles);
+        //console.log("H: ", articles);
+        articles = this.filterTags(articles);
+        //console.log("I: ", articles);
+
         if (articles.length != 0) {
           this.renderMenu(articles);
         }

@@ -24,17 +24,7 @@ export class ArticlesListController {
     });
   }
 
-  /*addSelectedTitleListener() {
-    document.getElementsByClassName("title").forEach(li => {
-      li.addEventListener("click", event => {
-        alert("ok");
-      });
-    });
-  }*/
-
   addSelectedTitleListener() {
-    //document.addEventListener("DOMContentLoaded", () => {
-    //try {
     console.log("Titles1");
     const items = document.getElementsByClassName("title");
 
@@ -50,10 +40,6 @@ export class ArticlesListController {
         //console.log(window.name);
       });
     }
-    //} catch (err) {
-    //  console.log("Error", err);
-    //}
-    //});
   }
 
   showLoadingMessage() {

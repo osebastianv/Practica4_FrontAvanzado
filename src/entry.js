@@ -19,6 +19,11 @@ document.addEventListener("DOMContentLoaded", () => {
     PubSub
   );
 
-  let menuController = new MenuController(".articles-menu", appService, PubSub);
+  let menuController = new MenuController(
+    ".articles-menu",
+    appService,
+    PubSub,
+    1
+  );
   menuController.loadMenu();
 });
