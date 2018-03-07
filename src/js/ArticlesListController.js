@@ -1,8 +1,8 @@
 export class ArticlesListController {
-  constructor(selector, articlesService, pubSub) {
+  constructor(selector, appService, pubSub) {
     this.element = document.querySelector(selector);
     console.log("J: ", this.element);
-    this.articlesService = articlesService;
+    this.appService = appService;
     this.pubSub = pubSub;
     this.addEventListeners();
   }
@@ -65,7 +65,7 @@ export class ArticlesListController {
       '<div class="error">Se ha producido un error</div>';
   }
 
-  showNoArticlesMessage() {
+  showNoDataMessage() {
     this.element.innerHTML = '<div class="info">No hay ningún artículo</div>';
   }
 
@@ -113,12 +113,19 @@ export class ArticlesListController {
   loadArticles(filter) {
     //console.log("algo1", filter);
     this.showLoadingMessage();
-    this.articlesService
+
+    if (typeof filter !== "undefined") {
+      if (filter !== "Inicio" && filter !== "") {
+        filter = "?tag=" + filter;
+      }
+    }
+
+    this.appService
       .list(filter)
       .then(articles => {
         //console.log(articles);
         if (articles.length == 0) {
-          this.showNoArticlesMessage();
+          this.showNoDataMessage();
         } else {
           this.renderArticles(articles);
         }

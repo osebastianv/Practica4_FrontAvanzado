@@ -1,9 +1,9 @@
-//import { ArticlesService } from "./ArticlesService";
+//import { AppService } from "./appService";
 
 export class MenuController {
-  constructor(selector, articlesService, pubSub) {
+  constructor(selector, appService, pubSub) {
     this.element = document.querySelector(selector);
-    this.articlesService = articlesService;
+    this.appService = appService;
     this.pubSub = pubSub;
   }
 
@@ -26,9 +26,6 @@ export class MenuController {
         //console.log(event.srcElement.innerText);
         event.srcElement.classList.add("menu_item--active");
         this.pubSub.publish("menu:selected", event.srcElement.innerText);
-        /*this.articlesListController.loadArticles(event.srcElement.innerText);
-        //appController.toggleForm();
-        this.pubSub.publish("menu:openclose");*/
       });
     }
   }
@@ -41,8 +38,6 @@ export class MenuController {
                 Inicio
             </li>`;
 
-    //<a href="">Inicio</a>
-
     for (let article of articles) {
       if (article.tag != "") {
         html += `<li class="menu_item">
@@ -50,8 +45,6 @@ export class MenuController {
               </li>`;
       }
     }
-
-    //<a href="">${article.tag}</a>
 
     html += `</ul>`;
 
@@ -65,8 +58,8 @@ export class MenuController {
   }
 
   loadMenu() {
-    this.articlesService
-      .list()
+    this.appService
+      .list("")
       .then(articles => {
         //console.log(articles);
         if (articles.length != 0) {

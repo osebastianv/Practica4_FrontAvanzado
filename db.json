@@ -74,9 +74,22 @@
   "comments": [
     {
       "id": 1,
-      "nombre": "Pepito Grillo",
+      "name": "Pepito Grillo",
       "email": "pgrillo@noexiste.com",
-      "comentario": "Comentario número 1"
+      "text": "Comentario número 1"
+    },
+    {
+      "id": 2,
+      "name": "Pepito Grillo2",
+      "email": "pgrillo@noexiste2.com",
+      "text": "Comentario número 2"
+    },
+    {
+      "id": 3,
+      "name": "Pepito Grillo3",
+      "email": "pgrillo@noexiste3.com",
+      "text":
+        "Comentario número 3. Lorem ipsum es el texto que se usa habitualmente en diseño gráfico en demostraciones de tipografías o de borradores de diseño para probar el diseño visual antes de insertar el texto final. Aunque no posee actualmente fuentes para justificar sus hipótesis, el profesor de filología clásica Richard McClintock."
     }
   ]
 }
