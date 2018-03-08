@@ -1,5 +1,3 @@
-//import { AppService } from "./appService";
-
 export class MenuController {
   constructor(selector, appService, pubSub, type) {
     this.element = document.querySelector(selector);
@@ -12,24 +10,20 @@ export class MenuController {
     var menuItems = document.getElementsByClassName("menu_item");
     for (var i = 0; i < menuItems.length; i++) {
       menuItems[i].classList.remove("menu_item--active");
-      //console.log(menuItems[i]);
     }
   }
 
   loadEvents() {
     var menuItems = document.getElementsByClassName("menu_item");
-    //console.log(menuItems);
 
     for (var i = 0; i < menuItems.length; i++) {
       menuItems[i].addEventListener("click", event => {
         event.preventDefault();
         this.deleteActiveClass();
-        //console.log(event.srcElement.innerText);
         event.srcElement.classList.add("menu_item--active");
         if (this.type == 1) {
           this.pubSub.publish("menu:selected", event.srcElement.innerText);
         } else {
-          //alert(event.srcElement.innerText);
           window.open("index.html", "_self");
         }
       });
@@ -58,13 +52,10 @@ export class MenuController {
     </div>
     </form>`;
 
-    //<i class="fa fa-search"></i>
-
     html += `</ul>`;
 
     this.element.innerHTML = html;
 
-    console.log("A", this.type);
     if (this.type == 1) {
       this.pubSub.publish("menu:selected", "");
     }
@@ -94,9 +85,7 @@ export class MenuController {
     this.appService
       .list("")
       .then(articles => {
-        //console.log("H: ", articles);
         articles = this.filterTags(articles);
-        //console.log("I: ", articles);
 
         if (articles.length != 0) {
           this.renderMenu(articles);

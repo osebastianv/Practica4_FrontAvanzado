@@ -22,10 +22,6 @@ export class AppController {
 
   toggleMenu() {
     const value = this.element.classList.toggle("show-menu");
-    //console.log(this.element.classList.contains("show-menu"), value);
-
-    //const value = this.element.classList.toggle("show-menu");
-    //console.log(this.element.classList.contains("show-menu"), value);
   }
 
   addWindowResizedListener() {
@@ -35,9 +31,6 @@ export class AppController {
   }
 
   changeMediaQuery(mql) {
-    //alert(mql.matches);
-    //console.log(mql.matches);
-
     //Se obtiene el body en local porque hay veces que this.element está undefined
     const body = document.querySelector("body");
     if (mql.matches == true) {
@@ -49,6 +42,5 @@ export class AppController {
         body.classList.toggle("show-menu");
       }
     }
-    //console.log("Contiene: ", body.classList.contains("show-menu"));
   }
 }

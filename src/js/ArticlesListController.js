@@ -1,9 +1,15 @@
+import { GeneralFunctions } from "./GeneralFunctions.js";
+//let moment = require("moment");
+//moment.locale("es");
+
 export class ArticlesListController {
   constructor(selector, appService, pubSub) {
     this.element = document.querySelector(selector);
-    console.log("J: ", this.element);
+    //console.log("J: ", this.element);
     this.appService = appService;
     this.pubSub = pubSub;
+
+    this.generalFunctions = new GeneralFunctions();
     this.addEventListeners();
   }
 
@@ -15,7 +21,7 @@ export class ArticlesListController {
   addSelectedItemMenuListener() {
     this.pubSub.subscribe("menu:selected", (event, filter) => {
       this.loadArticles(filter);
-      console.log(filter);
+      //console.log(filter);
       //if (filter !== undefined) {
       if (typeof filter !== "undefined" && filter !== "") {
         //console.log("SI");
@@ -25,19 +31,11 @@ export class ArticlesListController {
   }
 
   addSelectedTitleListener() {
-    console.log("Titles1");
     const items = document.getElementsByClassName("title");
 
-    console.log("Titles:", items);
-    console.log("vale", items.length);
-
     for (let i = 0; i < items.length; i++) {
-      //console.log("algo:", items[i]);
       items[i].addEventListener("click", event => {
-        //alert("ok", event);
-        //console.log("ok", event.target.innerText);
         window.open("detail.html", "_self");
-        //console.log(window.name);
       });
     }
   }
@@ -55,6 +53,68 @@ export class ArticlesListController {
     this.element.innerHTML = '<div class="info">No hay ningún artículo</div>';
   }
 
+  /*dateFormat(date) {
+    //const momentDate = moment("2018-03-01 17:05:00");
+    const momentDate = moment(date);
+    const momentNow = Date.now();
+
+    //Segundos
+    let diff = momentDate.diff(momentNow, "seconds") * -1;
+    if (diff < 0) {
+      return "";
+    }
+
+    if (diff < 60) {
+      //return momentDate.startOf("seconds").fromNow();
+      console.log(diff);
+      if (diff == "1") {
+        return `hace ${diff} segundo`;
+      } else {
+        return `hace ${diff} segundos`;
+      }
+    }
+
+    //Minutos
+    diff = momentDate.diff(momentNow, "minutes") * -1;
+    if (diff < 60) {
+      console.log(diff);
+      if (diff == "1") {
+        return `hace ${diff} minuto`;
+      } else {
+        return `hace ${diff} minutos`;
+      }
+    }
+
+    //Horas
+    diff = momentDate.diff(momentNow, "hours") * -1;
+    if (diff < 24) {
+      console.log(diff);
+      if (diff == "1") {
+        return `hace ${diff} hora`;
+      } else {
+        return `hace ${diff} horas`;
+      }
+    }
+
+    //Horas
+    diff = momentDate.diff(momentNow, "days") * -1;
+    if (diff < 7) {
+      console.log(diff);
+      return momentDate.format("dddd");
+    }
+
+    //console.log("L", momentDate.day());
+    //console.log("L", momentDate.format("dddd"));
+    //console.log("L", momentDate.format("LLLL"));
+
+    //console.log("L", momentDate.diff(momentNow, "seconds") * -1);
+    //console.log("L", momentDate.diff(momentNow, "minutes") * -1);
+    //console.log("L", momentDate.diff(momentNow, "hours") * -1);
+    //console.log("L", momentDate.diff(momentNow, "days") * -1);
+    console.log(diff);
+    return momentDate.format("LLLL");
+  }*/
+
   renderArticles(articles) {
     let html = "";
 
@@ -62,7 +122,7 @@ export class ArticlesListController {
       html += `<article class="article">
                 <div class="url">`;
 
-      //console.log(article.urlType);
+      const date = this.generalFunctions.dateFormat(article.date);
 
       if (article.urlType == 1) {
         //1. Imagen
@@ -81,7 +141,7 @@ export class ArticlesListController {
 
                     <div class="author">
                         <img src="${article.photo}" alt="${article.author}">
-                        <div class="name">${article.author}</div>
+                        <div class="name">${article.author}, ${date}</div>
                         <div class="comments-info">
                           <i class="fa fa-comments"></i>
                         </div>
@@ -96,19 +156,19 @@ export class ArticlesListController {
   }
 
   loadArticles(filter) {
-    //console.log("algo1", filter);
     this.showLoadingMessage();
 
     if (typeof filter !== "undefined") {
       if (filter !== "Inicio" && filter !== "") {
         filter = "?tag=" + filter;
+      } else {
+        filter = "";
       }
     }
 
     this.appService
       .list(filter)
       .then(articles => {
-        //console.log(articles);
         if (articles.length == 0) {
           this.showNoDataMessage();
         } else {

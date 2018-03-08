@@ -1,9 +1,14 @@
 export class CommentsListController {
   constructor(selector, appService, pubSub) {
     this.element = document.querySelector(selector);
-    console.log("J: ", this.element);
     this.appService = appService;
     this.pubSub = pubSub;
+
+    pubSub.subscribe("comment:created", (event, createdComment) => {
+      //console.log("CommentsListController", createdComment);
+      this.loadComments("");
+    });
+
     this.addEventListeners();
   }
 
@@ -37,13 +42,20 @@ export class CommentsListController {
   }
 
   loadComments(filter) {
-    //console.log("algo1", filter);
     this.showLoadingMessage();
+
+    if (filter == "") {
+      filter += "?";
+    } else {
+      filter += "&";
+    }
+
+    //Orden descendente
+    filter += "_sort=id&_order=desc";
 
     this.appService
       .list(filter)
       .then(comments => {
-        //console.log(articles);
         if (comments.length == 0) {
           this.showNoDataMessage();
         } else {

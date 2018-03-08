@@ -1,83 +1,21 @@
-import { CommentsFormValidations } from "./CommentsFormValidations.js";
-import { GeneralFunctions } from "./GeneralFunctions.js";
-
-export class CommentsFormController {
-  constructor(selector, appService, pubSub) {
-    this.element = document.querySelector(selector);
-    this.appService = appService;
-    this.pubSub = pubSub;
-    this.loading = false;
-
-    /*this.nameInput = document.getElementById("contact-name");
+export class CommentsFormValidations {
+  constructor() {
+    this.nameInput = document.getElementById("contact-name");
     this.emailInput = document.getElementById("contact-email");
     this.commentsInput = document.getElementById("comments-text");
-    this.commentsCounter = document.getElementById("comments-counter");*/
+    this.commentsCounter = document.getElementById("comments-counter");
 
-    this.commentsFormValidations = new CommentsFormValidations();
-    this.generalFunctions = new GeneralFunctions();
-
-    //this.previewContador = 0;
-    //this.filtrarMensaje = false;
+    this.previewContador = 0;
+    this.filtrarMensaje = false;
 
     this.addEventListeners();
   }
 
-  setLoading(loading) {
-    this.loading = loading;
-    this.element.querySelectorAll("input, button").forEach(item => {
-      item.disabled = loading;
-    });
-  }
-
   addEventListeners() {
-    //this.addInputListeners();
-    this.addFormSubmitListener();
-    //this.addFormCommentsListener();
+    this.addFormCommentsListener();
   }
 
-  addFormSubmitListener() {
-    document.addEventListener("submit", event => {
-      event.preventDefault();
-
-      //const contactOK = this.checkContact(event);
-      const contactOK = this.commentsFormValidations.checkContact(event);
-      if (contactOK == false) {
-        return;
-      }
-
-      if (this.loading) {
-        return; // si se está cargando, no hacemos nada más
-      }
-      this.setLoading(true);
-      let comment = this.buildData();
-      console.log(comment);
-      this.appService
-        .save(comment)
-        .then(createdComment => {
-          //console.log("COMENTARIO CREADO", createdComment);
-          this.element.reset();
-          this.pubSub.publish("comment:created", createdComment);
-        })
-        .catch(error => {
-          console.error("SE HA PRODUCIDO UN ERROR");
-          alert(`Se ha producido un error ${error}`);
-        })
-        .finally(() => {
-          this.setLoading(false);
-        });
-    });
-  }
-
-  buildData() {
-    return {
-      name: this.element.querySelector("#contact-name").value,
-      email: this.element.querySelector("#contact-email").value,
-      text: this.element.querySelector("#comments-text").value,
-      date: this.generalFunctions.currentDateFormat()
-    };
-  }
-
-  /*checkContact(event) {
+  checkContact(event) {
     // Validamos nombre
     if (this.nameInput.checkValidity() === false) {
       alert("Escriba su nombre, por favor");
@@ -133,9 +71,9 @@ export class CommentsFormController {
       }
     }
     return contador;
-  }*/
+  }
 
-  /*refreshWordsCounter(contador) {
+  refreshWordsCounter(contador) {
     var text;
     if (contador == 1) {
       text = contador + " palabra (máx 120)";
@@ -170,52 +108,29 @@ export class CommentsFormController {
 
     this.commentsInput.addEventListener("paste", event => {
       //Ponemos el setTimeout para poder obtener el valor del campo al completo, ya que en el evento paste la propiedad value no contiene el texto a pegar
+      var self = this;
       setTimeout(function() {
         let commentsInput = document.getElementById("comments-text");
         //if (typeof this.commentsInput === "undefined") return;
-        const contador = this.countWords(commentsInput.value);
+        const contador = self.countWords(commentsInput.value);
 
-        if (this.previewContador == contador) {
+        if (self.previewContador == contador) {
           return false; //para que no saque el mensaje de > 150 en los 2 eventos (keyup y paste) al copiar desde teclado
         }
-        this.refreshWordsCounter(contador);
+        self.refreshWordsCounter(contador);
 
         if (contador > 120) {
-          if (this.filtrarMensaje == false) {
+          if (self.filtrarMensaje == false) {
             alert(
               "El contenido escrito sobrepasa las 120 palabras, recorte el texto por favor."
             );
-            this.filtrarMensaje = true;
+            self.filtrarMensaje = true;
             commentsInput.focus();
           }
         } else {
-          this.filtrarMensaje = false;
+          self.filtrarMensaje = false;
         }
       }, 1000);
     });
-  }*/
-}
-
-/*addInputListeners() {
-    // en todos los input que hay en el formulario, los valido cuando se pierde el foco
-    this.element.querySelectorAll("input").forEach(input => {
-      input.addEventListener("blur", event => {
-        // event.target sería lo mismo que input en este caso
-        if (input.checkValidity() == false) {
-          input.classList.add("error");
-        } else {
-          input.classList.remove("error");
-        }
-        this.checkFormValidity();
-      });
-    });
   }
-
-  checkFormValidity() {
-    let button = this.element.querySelector("button");
-    if (this.element.checkValidity()) {
-      button.disabled = false;
-    } else {
-      button.disabled = true;
-    }
-  }*/
+}

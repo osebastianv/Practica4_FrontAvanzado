@@ -11,7 +11,6 @@ document.addEventListener("DOMContentLoaded", () => {
   let headerController = new HeaderController(".web-header", PubSub);
 
   let appService = new AppService("http://localhost:3001/articles");
-  //console.log(appService.url);
 
   let articlesListController = new ArticlesListController(
     ".articles-list",
