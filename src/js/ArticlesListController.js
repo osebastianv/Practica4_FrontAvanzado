@@ -43,7 +43,7 @@ export class ArticlesListController {
 
     for (let i = 0; i < items.length; i++) {
       items[i].addEventListener("click", event => {
-        window.open("/detail.html#comments2", "_self");
+        window.open("/detail.html#comments", "_self");
       });
     }
   }

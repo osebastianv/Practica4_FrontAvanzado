@@ -24,7 +24,7 @@
       font-size: font-size-h4;
     }
 
-    img {
+    .image-header {
       width: 100%;
       border: 1px solid black;
     }
@@ -47,7 +47,7 @@
       flex-direction: row;
       align-items: center;
 
-      img {
+      .place-holder {
         height: 48px;
         width: 48px;
         //max-width: 100%;
