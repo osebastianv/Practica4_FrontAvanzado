@@ -5,7 +5,6 @@ import { GeneralFunctions } from "./GeneralFunctions.js";
 export class ArticlesListController {
   constructor(selector, appService, pubSub) {
     this.element = document.querySelector(selector);
-    //console.log("J: ", this.element);
     this.appService = appService;
     this.pubSub = pubSub;
 
@@ -14,6 +13,7 @@ export class ArticlesListController {
   }
 
   addEventListeners() {
+    //this.addSelectedItemCommentListener();
     this.addSelectedItemMenuListener();
     //this.addSelectedTitleListener();
   }
@@ -21,10 +21,8 @@ export class ArticlesListController {
   addSelectedItemMenuListener() {
     this.pubSub.subscribe("menu:selected", (event, filter) => {
       this.loadArticles(filter);
-      //console.log(filter);
       //if (filter !== undefined) {
       if (typeof filter !== "undefined" && filter !== "") {
-        //console.log("SI");
         this.pubSub.publish("openclose");
       }
     });
@@ -36,6 +34,16 @@ export class ArticlesListController {
     for (let i = 0; i < items.length; i++) {
       items[i].addEventListener("click", event => {
         window.open("detail.html", "_self");
+      });
+    }
+  }
+
+  addSelectedItemCommentListener() {
+    const items = document.getElementsByClassName("comments-info");
+
+    for (let i = 0; i < items.length; i++) {
+      items[i].addEventListener("click", event => {
+        window.open("/detail.html#comments2", "_self");
       });
     }
   }
@@ -52,68 +60,6 @@ export class ArticlesListController {
   showNoDataMessage() {
     this.element.innerHTML = '<div class="info">No hay ningún artículo</div>';
   }
-
-  /*dateFormat(date) {
-    //const momentDate = moment("2018-03-01 17:05:00");
-    const momentDate = moment(date);
-    const momentNow = Date.now();
-
-    //Segundos
-    let diff = momentDate.diff(momentNow, "seconds") * -1;
-    if (diff < 0) {
-      return "";
-    }
-
-    if (diff < 60) {
-      //return momentDate.startOf("seconds").fromNow();
-      console.log(diff);
-      if (diff == "1") {
-        return `hace ${diff} segundo`;
-      } else {
-        return `hace ${diff} segundos`;
-      }
-    }
-
-    //Minutos
-    diff = momentDate.diff(momentNow, "minutes") * -1;
-    if (diff < 60) {
-      console.log(diff);
-      if (diff == "1") {
-        return `hace ${diff} minuto`;
-      } else {
-        return `hace ${diff} minutos`;
-      }
-    }
-
-    //Horas
-    diff = momentDate.diff(momentNow, "hours") * -1;
-    if (diff < 24) {
-      console.log(diff);
-      if (diff == "1") {
-        return `hace ${diff} hora`;
-      } else {
-        return `hace ${diff} horas`;
-      }
-    }
-
-    //Horas
-    diff = momentDate.diff(momentNow, "days") * -1;
-    if (diff < 7) {
-      console.log(diff);
-      return momentDate.format("dddd");
-    }
-
-    //console.log("L", momentDate.day());
-    //console.log("L", momentDate.format("dddd"));
-    //console.log("L", momentDate.format("LLLL"));
-
-    //console.log("L", momentDate.diff(momentNow, "seconds") * -1);
-    //console.log("L", momentDate.diff(momentNow, "minutes") * -1);
-    //console.log("L", momentDate.diff(momentNow, "hours") * -1);
-    //console.log("L", momentDate.diff(momentNow, "days") * -1);
-    console.log(diff);
-    return momentDate.format("LLLL");
-  }*/
 
   renderArticles(articles) {
     let html = "";
@@ -144,15 +90,18 @@ export class ArticlesListController {
                         <div class="name">${article.author}, ${date}</div>
                         <div class="comments-info">
                           <i class="fa fa-comments"></i>
+                          <p class="commentsNumber">0</p>
                         </div>
-                        <p class="commentsNumber">100</p>
                     </div>
                 </div>
             </article>`;
+
+      //<a href="detail.html#comments">ir</a>
     }
     this.element.innerHTML = html;
 
     this.addSelectedTitleListener();
+    this.addSelectedItemCommentListener();
   }
 
   loadArticles(filter) {

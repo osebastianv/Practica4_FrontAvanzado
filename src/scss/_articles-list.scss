@@ -113,14 +113,24 @@
             font-size: $font-size-base;
           }
         }
-        .comments-comments-info {
+        .comments-info {
+          display: flex;
           width: calc(50%-48px);
           border-color: black;
           border-radius: 5px;
           overflow: hidden;
-        }
-        .commentsNumber {
-          margin: 0 5px;
+
+          &:hover {
+            cursor: pointer;
+          }
+
+          .fa-comments {
+            flex: 1;
+          }
+          .commentsNumber {
+            flex: 2;
+            margin: 0 5px;
+          }
         }
       }
     }

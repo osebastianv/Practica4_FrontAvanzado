@@ -50,12 +50,13 @@ export class CommentsFormController {
       }
       this.setLoading(true);
       let comment = this.buildData();
-      console.log(comment);
+
       this.appService
         .save(comment)
         .then(createdComment => {
-          //console.log("COMENTARIO CREADO", createdComment);
+          console.log("COMENTARIO CREADO", createdComment);
           this.element.reset();
+          this.commentsFormValidations.refreshWordsCounter(0);
           this.pubSub.publish("comment:created", createdComment);
         })
         .catch(error => {

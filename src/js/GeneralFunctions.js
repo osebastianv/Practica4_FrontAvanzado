@@ -53,15 +53,13 @@ export class GeneralFunctions {
       return momentDate.format("dddd");
     }
 
-    //console.log("L", momentDate.day());
-    //console.log("L", momentDate.format("dddd"));
-    //console.log("L", momentDate.format("LLLL"));
+    //Mes
+    diff = momentDate.diff(momentNow, "months") * -1;
+    if (diff < 12) {
+      return momentDate.format("D [de] MMMM[, a las] H [horas]");
+    }
 
-    //console.log("L", momentDate.diff(momentNow, "seconds") * -1);
-    //console.log("L", momentDate.diff(momentNow, "minutes") * -1);
-    //console.log("L", momentDate.diff(momentNow, "hours") * -1);
-    //console.log("L", momentDate.diff(momentNow, "days") * -1);
-    console.log(diff);
-    return momentDate.format("LLLL");
+    //return momentDate.format("LLLL");
+    return momentDate.format("D [de] MMMM [de] YYYY[, a las] H [horas]");
   }
 }

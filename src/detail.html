@@ -1,5 +1,5 @@
 <%= require('html-loader!./includes/header.html') %>
-    <section class="detail">
+    <section class="detail" id="body">
         <section class="the-article">
             <h1>Lorem Ipsum</h1>
 
@@ -48,7 +48,7 @@
             </p>
         </section>
 
-        <section class="comments" name="comments">
+        <section class="comments" name="comments" id="comments">
             <h2 class="comments-title">Comentarios</h2>
             <section class="comments-list"></section>
 
@@ -73,5 +73,4 @@
             </form>
         </section>
     </section>
-
     <%= require('html-loader!./includes/footer.html') %>
