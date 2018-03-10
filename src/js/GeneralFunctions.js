@@ -7,9 +7,7 @@ export class GeneralFunctions {
   }
 
   dateFormat(date) {
-    //const momentDate = moment("2018-03-01 17:05:00");
     const momentDate = moment(date);
-    //const momentNow = Date.now();
     const momentNow = moment().format("YYYY-MM-DD HH:mm:ss");
 
     //Segundos
@@ -19,7 +17,6 @@ export class GeneralFunctions {
     }
 
     if (diff < 60) {
-      //return momentDate.startOf("seconds").fromNow();
       if (diff == "1") {
         return `hace ${diff} segundo`;
       } else {
@@ -47,19 +44,19 @@ export class GeneralFunctions {
       }
     }
 
-    //Horas
+    //Días
     diff = momentDate.diff(momentNow, "days") * -1;
     if (diff < 7) {
       return momentDate.format("dddd");
     }
 
-    //Mes
+    //Meses
     diff = momentDate.diff(momentNow, "months") * -1;
     if (diff < 12) {
       return momentDate.format("D [de] MMMM[, a las] H [horas]");
     }
 
-    //return momentDate.format("LLLL");
+    //Resto
     return momentDate.format("D [de] MMMM [de] YYYY[, a las] H [horas]");
   }
 }

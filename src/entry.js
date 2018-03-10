@@ -12,17 +12,17 @@ document.addEventListener("DOMContentLoaded", () => {
   let headerController = new HeaderController(".web-header", PubSub);
   let footerController = new FooterController(".web-footer", PubSub);
 
-  let appService = new AppService("http://localhost:3001/articles");
+  let appServiceArticles = new AppService("http://localhost:3001/articles");
 
   let articlesListController = new ArticlesListController(
     ".articles-list",
-    appService,
+    appServiceArticles,
     PubSub
   );
 
   let menuController = new MenuController(
     ".articles-menu",
-    appService,
+    appServiceArticles,
     PubSub,
     1
   );

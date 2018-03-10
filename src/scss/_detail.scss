@@ -1,15 +1,10 @@
 @import "mixins/text-overflow-ellipsis";
 @import "mixins/responsive-utils";
 
-/*.fa-bars {
-  visibility: hidden;
-}*/
-
 .detail {
   margin: 0 auto; // centra un div horizontalmente
   max-width: $extra-large-device-width;
   padding: 0 10px;
-  //background: green;
 
   .the-article {
     h1 {
@@ -37,7 +32,14 @@
 
     p {
       text-align: justify;
-      //background: chocolate;
+      b {
+        font-weight: bold;
+        font-style: italic;
+      }
+
+      i {
+        font-style: italic;
+      }
     }
 
     .author-detail {
@@ -50,7 +52,6 @@
       .place-holder {
         height: 48px;
         width: 48px;
-        //max-width: 100%;
         border-radius: 50%;
         overflow: hidden;
       }
@@ -64,13 +65,7 @@
           font-size: $font-size-base;
         }
       }
-      /*.comments-comments-info {
-        width: calc(50%-48px);
-        border-color: black;
-        border-radius: 5px;
-        overflow: hidden;
-        background: green;
-      }*/
+
       .commentsNumber {
         margin: 0 5px;
       }
@@ -78,6 +73,5 @@
   }
   .comments-title {
     margin: 20px 0px 10px 0;
-    //background: red;
   }
 }

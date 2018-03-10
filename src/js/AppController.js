@@ -2,7 +2,6 @@ export class AppController {
   constructor(selector, pubSub) {
     this.element = document.querySelector(selector);
     this.pubSub = pubSub;
-
     this.mql = window.matchMedia("screen and (max-width: 750px)");
     this.addEventListeners();
   }
@@ -25,7 +24,7 @@ export class AppController {
   }
 
   addWindowResizedListener() {
-    //let mql = window.matchMedia("screen and (max-width: 750px)");
+    //Evento para controlar el cambio de menú de pantalla completa a menú desplegable
     this.changeMediaQuery(this.mql);
     this.mql.addListener(this.changeMediaQuery);
   }

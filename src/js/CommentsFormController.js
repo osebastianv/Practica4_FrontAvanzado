@@ -7,18 +7,8 @@ export class CommentsFormController {
     this.appService = appService;
     this.pubSub = pubSub;
     this.loading = false;
-
-    /*this.nameInput = document.getElementById("contact-name");
-    this.emailInput = document.getElementById("contact-email");
-    this.commentsInput = document.getElementById("comments-text");
-    this.commentsCounter = document.getElementById("comments-counter");*/
-
     this.commentsFormValidations = new CommentsFormValidations();
     this.generalFunctions = new GeneralFunctions();
-
-    //this.previewContador = 0;
-    //this.filtrarMensaje = false;
-
     this.addEventListeners();
   }
 
@@ -37,7 +27,6 @@ export class CommentsFormController {
     document.addEventListener("submit", event => {
       event.preventDefault();
 
-      //const contactOK = this.checkContact(event);
       const contactOK = this.commentsFormValidations.checkContact(event);
       if (contactOK == false) {
         return;

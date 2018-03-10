@@ -9,46 +9,24 @@
   z-index: 999;
   top: 0;
   text-align: left;
-  //padding: 20px 0;
-  //padding: 20px 10px;
   box-shadow: 0 0 5px $shadow-color;
-  //margin: 0 0 30px 0;
-  background: white;
+  background: $header-backcolor;
   display: flex;
   flex-direction: row;
-
-  //@include transparent-background(white);
-
-  /*text-align: center;
-  padding: 20px 0;
-  box-shadow: 0 0 5px $shadow-color;
-  margin: 0 0 30px 0;
-  @include transparent-background(gray);*/
   text-align: center;
 
   .web-title {
-    //flex: 1;
     padding: 8px 10px;
-
-    //color: $brand-color;
-    color: $color-FEIND;
+    color: $main-text-color;
     text-shadow: 0 1px 1px $shadow-color;
-    background: brown;
   }
 
-  /*.search {
-    z-index: 99999999;
-    background: blue;
-    width: 900px;
-
-    .input-search {
-      position: absolute;
-
-      right: 110px;
-      width: 100px;
-      background: green;
-    }
-  }*/
+  .login {
+    position: fixed;
+    z-index: -99999999;
+    left: 220px;
+    top: 0;
+  }
 
   .fa-bars {
     position: absolute;

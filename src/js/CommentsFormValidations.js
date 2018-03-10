@@ -60,7 +60,6 @@ export class CommentsFormValidations {
   countWords(text) {
     if (typeof text === "undefined") text = "";
     let comentario = text.replace(/\r?\n/g, " ");
-    //comentario = comentario.replace(/\r?\n/g, " ");
 
     let arrayPalabras = comentario.split(" ");
     let contador = 0;
@@ -111,7 +110,6 @@ export class CommentsFormValidations {
       var self = this;
       setTimeout(function() {
         let commentsInput = document.getElementById("comments-text");
-        //if (typeof this.commentsInput === "undefined") return;
         const contador = self.countWords(commentsInput.value);
 
         if (self.previewContador == contador) {

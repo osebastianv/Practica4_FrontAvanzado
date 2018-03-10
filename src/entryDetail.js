@@ -36,7 +36,6 @@ document.addEventListener("DOMContentLoaded", () => {
     appServiceComments,
     PubSub
   );
-  //commentsListController.loadComments("");
 
   let commentsFormController = new CommentsFormController(
     ".comments-form",

@@ -46,6 +46,10 @@ export class MenuController {
       }
     }
 
+    html += `<li class="menu_login">
+    login
+    </li>`;
+
     html += `<form novalidate class="search">
     <div>
         <input type="text" class="input-search" name="search" placeholder="Buscar...">

@@ -2,47 +2,25 @@
 @import "mixins/responsive-utils";
 
 .comments-list {
-  //background: green;
   min-height: 80px;
   max-height: 200px;
-  background: lightblue;
+  background: $comments-body-backcolor;
   border: 1px solid black;
   border-radius: 5px;
   overflow: auto; //scroll auto
 
   .comment {
-    //display: flex;
     background: white;
     margin: 10px 10px;
     padding: 5px;
-    //align-items: center;
-    //margin: 10px;
     box-shadow: 0 1px 5px $shadow-color;
     border-radius: 5px;
     overflow: hidden;
     transition: $default-transition-time all;
 
-    @include if-is-small-device {
-      //margin: 10px 5px;
-      //width: calc(100% - 10px);
-    }
-
-    @include if-is-medium-device {
-      //margin: 10px auto;
-      //width: calc(100% - 20px);
-    }
-
-    @include if-is-large-device {
-      //display: flex;
-    }
-
-    @include if-is-extra-large-device {
-    }
-
     .comment-name {
-      //font-size: $font-size-h6;
       @include if-is-medium-device {
-        font-size: $font-size-h1;
+        font-size: $font-size-h5;
       }
       font-weight: bold;
     }
@@ -56,5 +34,12 @@
       margin-top: 10px;
       text-align: justify;
     }
+  }
+
+  .empty,
+  .error,
+  .loading {
+    text-align: center;
+    padding-top: 30px;
   }
 }

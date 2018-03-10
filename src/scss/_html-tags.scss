@@ -3,7 +3,7 @@ body {
   font-family: $main-font-family;
   font-size: $font-size-base;
   color: $main-text-color;
-  background: white; //url("#{$images-path}doodles.png");
+  background: $body-backcolor;
   padding-top: $header-height;
 }
 

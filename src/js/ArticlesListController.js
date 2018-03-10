@@ -1,6 +1,4 @@
 import { GeneralFunctions } from "./GeneralFunctions.js";
-//let moment = require("moment");
-//moment.locale("es");
 
 export class ArticlesListController {
   constructor(selector, appService, pubSub) {
@@ -13,15 +11,13 @@ export class ArticlesListController {
   }
 
   addEventListeners() {
-    //this.addSelectedItemCommentListener();
     this.addSelectedItemMenuListener();
-    //this.addSelectedTitleListener();
   }
 
   addSelectedItemMenuListener() {
     this.pubSub.subscribe("menu:selected", (event, filter) => {
       this.loadArticles(filter);
-      //if (filter !== undefined) {
+
       if (typeof filter !== "undefined" && filter !== "") {
         this.pubSub.publish("openclose");
       }
@@ -58,7 +54,7 @@ export class ArticlesListController {
   }
 
   showNoDataMessage() {
-    this.element.innerHTML = '<div class="info">No hay ningún artículo</div>';
+    this.element.innerHTML = '<div class="empty">No hay ningún artículo</div>';
   }
 
   renderArticles(articles) {
@@ -90,14 +86,13 @@ export class ArticlesListController {
                         <div class="name">${article.author}, ${date}</div>
                         <div class="comments-info">
                           <i class="fa fa-comments"></i>
-                          <p class="commentsNumber">0</p>
+                          <p class="commentsNumber">${article.id}</p>
                         </div>
                     </div>
                 </div>
             </article>`;
-
-      //<a href="detail.html#comments">ir</a>
     }
+
     this.element.innerHTML = html;
 
     this.addSelectedTitleListener();
