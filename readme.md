@@ -59,7 +59,7 @@ npm run serve
 ```
 Con ello arrancaremos el servidor de desarrollo de webpack que actualiza el navegador cada vez que guardemos una modificación en el código fuente.
 
-##	3. Funcionalidades de la aplicación
+##	4. Funcionalidades de la aplicación
 La aplicación contiene dos páginas estáticas que comparten cabecera y pie de página:
 - Cabecera: contiene el nombre de la aplicación, un menú dinámico de categorías de artículos, una opción para hacer login (no activa) y una opción de búsqueda (no activa).
 - Pie de página: contiene el copyright y un icono para subir la página hasta cabecera.
@@ -68,7 +68,7 @@ Las páginas estáticas son las siguientes:
 - Lista de artículos: index.html.
 - Detalle de un artículo estático: detail.html.
 
-#### 3.1 Lista de artículos
+#### 4.1 Lista de artículos
 Cada artículo contendrá:
 - Una imagen o video.
 - Un título. Si se pulsa sobre él se abre la página de detalle (la misma para todos los artículos).
@@ -78,7 +78,7 @@ Cada artículo contendrá:
 
 El menú permite filtrar la lista por temática (en google chrome).
 
- #### 3.2 Detalle del artículo.
+ #### 4.2 Detalle del artículo.
  
  Contiene la información de un artículo estático junto a un sistema de gestión de comentarios. La estructura es la siguiente:
  - Un título.
